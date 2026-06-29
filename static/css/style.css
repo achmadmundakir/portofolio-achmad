@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap');
+
+:root {
+    --bg-body: #0a0f1d;        /* Navy lebih dalam agar teks putih menonjol */
+    --bg-card: #161e2d;        /* Card lebih terang sedikit dari body */
+    --accent-cyan: #38bdf8;    /* Cyan yang lebih lembut di mata */
+    --accent-indigo: #818cf8;  /* Indigo yang lebih terang */
+    --text-white: #ffffff;     /* Teks utama murni putih */
+    --text-light: #e2e8f0;     /* Teks deskripsi (sangat terbaca) */
+    --text-dim: #94a3b8;       /* Teks kecil/muted */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Background Blobs (Dibuat lebih redup agar tidak tabrakan dengan teks) */
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-cyan));
+    filter: blur(150px);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.1; /* Redup agar teks di atasnya jelas */
+}
+
+/* Typography Fix */
+h1, h2, h3, h4, .fw-bold {
+    color: var(--text-white) !important;
+}
+
+p {
+    color: var(--text-light) !important; /* Memastikan semua paragraf terbaca */
+}
+
+.text-muted {
+    color: var(--text-dim) !important;
+}
+
+.text-info {
+    color: var(--accent-cyan) !important;
+}
+
+/* Navbar Fix */
+.navbar {
+    background: rgba(10, 15, 29, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    color: var(--text-dim) !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-cyan) !important;
+}
+
+/* Card Style Fix (Kontras Tinggi) */
+.card-custom {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card-custom:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+}
+
+/* Progress Bar Fix */
+.progress {
+    background-color: #1e293b !important; /* Background bar lebih gelap */
+    height: 8px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent-indigo), var(--accent-cyan));
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: linear-gradient(90deg, var(--accent-indigo), var(--accent-cyan));
+    color: #fff !important;
+    font-weight: 700;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+}
+
+.btn-outline-info {
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.btn-outline-info:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-body);
+}
+
+/* Badge */
+.badge-custom {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
